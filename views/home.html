@@ -1,0 +1,8 @@
+<div>
+	<h3>What up</h3>
+	<p>{{hey}}</p>
+	<ul>
+		<li *ngFor="let thing of things" (click)="clickThing(thing)">{{thing}}</li>
+	</ul>
+	<h3 grow [ngStyle]="style">{{what}}</h3>
+</div>
