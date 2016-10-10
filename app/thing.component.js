@@ -9,15 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var data_service_1 = require('./data.service');
 var ThingComponent = (function () {
-    function ThingComponent() {
+    function ThingComponent(dataService) {
+        this.dataService = dataService;
         this.title = 'the thing view!';
+        this.data = this.dataService.getStuff();
     }
+    ;
     ThingComponent = __decorate([
         core_1.Component({
-            templateUrl: 'views/thing.html'
+            templateUrl: 'views/thing.html',
+            providers: [data_service_1.DataService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [data_service_1.DataService])
     ], ThingComponent);
     return ThingComponent;
 }());
